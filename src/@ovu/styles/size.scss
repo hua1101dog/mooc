@@ -1,0 +1,31 @@
+@import './theme-variables.scss';
+
+@each $size in $sizes {
+  .size--#{$size} {
+    font-size: map-get(map-get($size-list, $size), 'level1');
+    .el-table {
+      font-size: map-get(map-get($size-list, $size), 'level1') !important;
+    }
+    .el-pagination span:not([class*=suffix]),
+    .el-pagination button,
+    .el-pagination,
+    .el-input__inner,
+    .el-submenu__title,
+    .el-link,
+    .el-menu-item {
+      font-size: map-get(map-get($size-list, $size), 'level1') !important;
+    }
+    @for $level from 1 through $levels{
+      .font-level-#{$level} {
+        font-size: map-get(map-get($size-list, $size), 'level' + $level) !important;
+      }
+    }
+    .el-dialog__title {
+      font-size: map-get(map-get($size-list, $size), 'level3');
+    }
+    .el-tabs__item,
+    .el-form-item__label {
+      font-size: map-get(map-get($size-list, $size), 'level1');
+    }
+  }
+}

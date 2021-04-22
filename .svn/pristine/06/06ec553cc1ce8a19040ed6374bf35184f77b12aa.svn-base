@@ -1,0 +1,12 @@
+.app-container {
+    height: calc(100% - 5px) !important;
+}
+.filter-container{
+  height: 100%;
+}
+.el-table th .cell{
+  line-height: 3;
+}
+.mt20{
+  margin-top: 20px;
+}

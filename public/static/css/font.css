@@ -1,0 +1,17 @@
+
+@font-face{
+  font-family: 'Yahei Bold';
+  
+src:url('./微软雅黑Bold.ttf') format('truetype');
+}
+@font-face{
+  font-family:'Yahei Regular';
+  
+src: url('./微软雅黑繁简完全版.ttf') format('truetype');
+}
+@font-face{
+  font-family:'hydytj';
+  
+src: url('./汉仪蝶语体简.ttf') format('truetype');
+}
+

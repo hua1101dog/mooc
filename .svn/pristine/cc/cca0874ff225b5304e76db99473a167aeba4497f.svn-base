@@ -1,0 +1,60 @@
+.energy-monitor {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  .left-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-right: 10px;
+    overflow: auto;
+  }
+  .right-content {
+    flex: none;
+    width: 400px;
+    min-height: 500px;
+    background: #fff;
+  }
+  div[class^='left-content_']{
+    background-color: #fff;
+    padding: 10px 15px;
+  }
+  .left-content_bottom {
+    margin-top: 10px;
+  }
+  .left-item_header {
+    margin-bottom: 15px;
+  }
+}
+
+.self-list {
+  max-height: 350px;
+  min-height: 100px;
+  .list-item {
+    border: 1px solid #ebeef5;
+    border-radius: 5px;
+    padding: 15px 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    &.active {
+      border-color: #E87B0F !important;
+      border-width: 2px;
+    }
+  }
+  .list-item_left {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    > div:first-child {
+      flex: 0 0 80px
+    }
+  }
+  .list-item_right {
+    flex: 0 0 150px;
+    text-align: center;
+  }
+}

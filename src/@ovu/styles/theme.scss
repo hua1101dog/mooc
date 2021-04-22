@@ -1,0 +1,272 @@
+@import './theme-variables.scss';
+
+@each $name, $map in $themes {
+  .theme--#{$name} {
+    color: map-get(map-get($themes, $name), 'text-color');
+    .el-pagination__total,
+    .el-pagination__jump,
+    .el-dropdown {
+      color: map-get(map-get($themes, $name), 'text-color');
+    }
+    .tags-view-container {
+      background: map-get(map-get($themes, $name), 'background-color-4') !important;
+      .tags-view-item {
+        background: map-get(map-get($themes, $name), 'background-color-2') !important;
+        color: map-get(map-get($themes, $name), 'text-color-2') !important;
+        &.active {
+          background: map-get(map-get($themes, $name), 'background-color-6') !important;
+          color: map-get(map-get($themes, $name), 'text-active-color') !important;
+        }
+      }
+    }
+    .newStep_m {
+      background: map-get(map-get($themes, $name), 'background-color-4') !important;
+      border-top-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+      border-bottom-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+      label {
+        color: map-get(map-get($themes, $name), 'text-color-3') !important;
+        &.act {
+          color: map-get(map-get($themes, $name), 'text-active-color') !important;
+        }
+        &:hover:not(.act),
+        &.order.act {
+          color: map-get(map-get($themes, $name), 'text-hover-color') !important;
+        }
+      }
+      .tab-list {
+        background: map-get(map-get($themes, $name), 'background-color-5') !important;
+        border-top-color: map-get(map-get($themes, $name), 'border-color-3') !important;
+        /deep/.el-tabs__item {
+          color: map-get(map-get($themes, $name), 'text-color-3') !important;
+          &.is-active,
+          &:hover {
+            color: map-get(map-get($themes, $name), 'text-hover-color') !important;
+          }
+        }
+      }
+    }
+    .navbar {
+      background: map-get(map-get($themes, $name), 'background-color-9') !important;
+    }
+    .slider-content,
+    .sidebar-container {
+      .system-title {
+        background-color: map-get(map-get($themes, $name), 'background-color-4') !important;
+        border-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+        &:hover {
+          background-color: map-get(map-get($themes, $name), 'background-color-8') !important;
+        }
+      }
+      .sidebar-logo-container,
+      .el-menu,
+      .el-scrollbar {
+        background-color: map-get(map-get($themes, $name), 'background-color-4') !important;
+      }
+      .el-submenu:before {
+        background: map-get(map-get($themes, $name), 'border-color-2') !important;
+      }
+      .el-submenu__title,
+      .el-menu-item {
+        color: map-get(map-get($themes, $name), 'text-color') !important;
+        &:focus {
+          background-color: map-get(map-get($themes, $name), 'background-color-4') !important;
+        }
+        i:before {
+          color: map-get(map-get($themes, $name), 'text-color') !important;
+        }
+        &:hover {
+          background-color: map-get(map-get($themes, $name), 'background-color-3') !important;
+        }
+      }
+      .router-link-active {
+        .el-menu-item {
+          background-color: map-get(map-get($themes, $name), 'background-color-6') !important;
+          span {
+            color: map-get(map-get($themes, $name), 'text-active-color') !important;
+            font-weight: bold;
+          }
+          &,
+          i:before {
+            color: #fff !important;
+          }
+        }
+      }
+    }
+    .app-main-nochild,
+    .app-main-child {
+      background: map-get(map-get($themes, $name), 'background-color-4') !important;
+    }
+    .menu-drawer {
+      background: map-get(map-get($themes, $name), 'background-color') !important;
+      border-color: map-get(map-get($themes, $name), 'border-color-4') !important;
+    }
+    .theme-bg {
+      background: map-get(map-get($themes, $name), 'background-color-4') !important;
+      border-color: map-get(map-get($themes, $name), 'border-color-4') !important;
+    }
+    .theme-bg-2 {
+      background: map-get(map-get($themes, $name), 'background-color') !important;
+      border-color: map-get(map-get($themes, $name), 'border-color-4') !important;
+    }
+    .el-form-item__label,
+    .el-radio,
+    .el-checkbox,
+    .el-input__inner,
+    .el-textarea__inner,
+    .theme-text {
+      color: map-get(map-get($themes, $name), 'text-color') !important;
+    }
+
+    .el-textarea__inner,
+    .el-input__inner {
+      background-color: map-get(map-get($themes, $name), 'background-color-4');
+      border-color:  map-get(map-get($themes, $name), 'border-color');
+    }
+    .theme-border {
+      border-color:  map-get(map-get($themes, $name), 'border-color-2');
+      &.theme-hover:hover {
+        border-color:  map-get(map-get($themes, $name), 'border-hover-color');
+      }
+    }
+    .el-button--default {
+      background: map-get(map-get($themes, $name), 'background-color-4') !important;
+      border-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+      color: map-get(map-get($themes, $name), 'text-color') !important;
+    }
+    .el-button--primary {
+      background: map-get(map-get($themes, 'light'), 'background-color-6') !important;
+      border-color: map-get(map-get($themes, 'light'), 'border-color-7') !important;
+      color: map-get(map-get($themes, 'dark'), 'text-color') !important;
+    }
+    .el-table__fixed::before,
+    .el-table__fixed-right::before,
+    .el-table--group::after,
+    .el-table--border::after,
+    .el-table::before,
+    .el-table::before {
+      background: map-get(map-get($themes, $name), 'background-color-7') !important;
+    }
+    .el-table,
+    .table {
+      background: map-get(map-get($themes, $name), 'background-color-7') !important;
+      border-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+      thead {
+        th,
+        td {
+          background: map-get(map-get($themes, $name), 'background-color-7') !important;
+        }
+      }
+      tbody {
+        th,
+        td {
+          background: map-get(map-get($themes, $name), 'background-color-4');
+        }
+      }
+      th,
+      td {
+        border-color: map-get(map-get($themes, $name), 'border-color-2');
+      }
+      th {
+        color: map-get(map-get($themes, $name), 'text-color-4');
+      }
+      td {
+        color: map-get(map-get($themes, $name), 'text-color');
+      }
+      tr.hover-row td,
+      tr:hover td {
+        background: map-get(map-get($themes, $name), 'background-hover-color-table-td');
+      }
+      tr.current-row td {
+        background: map-get(map-get($themes, $name), 'background-hover-color-table-td-current');
+        color: map-get(map-get($themes, $name), 'text-color-td-current');
+      }
+    }
+    .panel-page {
+      background: map-get(map-get($themes, $name), 'background-color-7') !important;
+      border-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+    }
+
+    .sidebar-container {
+      border-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+    }
+
+    .el-drawer,
+    .el-dialog,
+    .panel-page {
+      background: map-get(map-get($themes, $name), 'background-color-5') !important;
+    }
+
+    .el-drawer__header,
+    .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active,
+    .el-dialog__header {
+      background: map-get(map-get($themes, $name), 'background-color-7') !important;
+    }
+
+    .el-drawer__header,
+    .el-dialog__title {
+      color: map-get(map-get($themes, $name), 'text-color');
+    }
+
+    .el-tabs__item {
+      color: map-get(map-get($themes, $name), 'text-color');
+      &.is-active {
+        color: map-get(map-get($themes, $name), 'text-color-5');
+      }
+    }
+    .el-title{
+      color: map-get(map-get($themes, $name), 'text-color-6');
+    }
+
+    .el-tabs__nav,
+    .el-tabs--card>.el-tabs__header,
+    .el-tabs--border-card>.el-tabs__header .el-tabs__item,
+    .el-tabs--border-card>.el-tabs__header,
+    .el-tabs {
+      border-color: map-get(map-get($themes, $name), 'border-color-2') !important;
+    }
+    .home-table {
+      .el-table thead th{
+        color:map-get(map-get($themes, $name), 'text-color-2');
+        background-color: map-get(map-get($themes, $name), 'background-color-9')!important;
+      }
+      .el-table tbody tr:nth-child(odd) {
+        td{
+          background-color: map-get(map-get($themes, $name), 'background-color-7')!important;
+        }
+      }
+    }
+    .tree-title{
+      background-color: map-get(map-get($themes, $name), 'background-color-7')!important;
+    }
+
+    @each $className, $value in $map {
+      .#{$className} {
+        @if str-slice($className, 1, 4) == 'text' {
+          @if str-slice($className, 5, 10) == 'hover' {
+            &:hover {
+              color: $value;
+            }
+          } @else {
+            color: $value;
+          }
+        } @else if str-slice($className, 1, 10) == 'background' {
+          @if str-slice($className, 12, 16) == 'hover' {
+            &:hover {
+              background-color: $value;
+            }
+          } @else {
+            background-color: $value;
+          }
+        } @else if str-slice($className, 1, 6) == 'border' {
+          @if str-slice($className, 8, 12) == 'hover' {
+            &:hover {
+              border-color: $value;
+            }
+          } @else {
+            border-color: $value;
+          }
+        }
+      }
+    }
+  }
+}

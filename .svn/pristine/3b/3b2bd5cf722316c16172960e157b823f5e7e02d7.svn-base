@@ -1,0 +1,8 @@
+# just a flag
+ENV = 'iot'
+
+# base api
+VUE_APP_BASE_API = '/prod-api'
+VUE_APP_INTER_API = '/interface/ovu-scene'
+VUE_APP_IOT_API = '/ovu-iot'
+VUE_APP_DESIGN_API = '/ovu-design'

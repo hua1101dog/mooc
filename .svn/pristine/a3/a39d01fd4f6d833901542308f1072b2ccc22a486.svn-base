@@ -1,0 +1,87 @@
+$--color-primary: #1264BC;
+$--color-primary-white: #FFFFFF;
+$--background-primary-color: $--color-primary;
+
+$themes: (
+  // 高亮风格
+  light: (
+    text-color: #333333,
+    text-color-2: #000,
+    text-color-3: #666666,
+    text-color-4: #999999,
+    text-color-5: $--color-primary,
+    text-color-6: $--color-primary,
+    text-active-color: $--color-primary-white,
+    text-hover-color: $--background-primary-color,
+    background-color: #F5F5F5,
+    background-color-2: #EEEEEE,
+    background-color-3: #FCEAD8,
+    background-color-4: $--color-primary-white,
+    background-color-5: #FAFAFA,
+    background-color-6: $--color-primary,
+    background-color-7: #F5F6FA,
+    background-color-8: rgb(245, 245, 245),
+    background-color-9: #FFFFFF,
+    // table
+    background-hover-color-table-td: #F5F6FA,
+    background-hover-color-table-td-current:  #78aee9,
+    text-color-td-current: #FFFFFF,
+    border-color: #CCCCCC,
+    border-color-2: #E1E6EB,
+    border-color-3: #F2F2F2,
+    border-color-4: #e6ebf5,
+    border-color-5: #DCDFE6,
+    border-color-6: #efefef,
+    border-color-7: #1264BC,
+    border-hover-color: $--color-primary,
+  ),
+  // 黑暗风格
+  dark: (
+    text-color: #FFFFFF,
+    text-color-2: #BCBCBC,
+    text-color-3: #C4C4C4,
+    text-color-4: #FFFFFF,
+    text-color-5: $--color-primary,
+    text-color-6: $--color-primary-white,
+    text-active-color: #FFFFFF,
+    text-hover-color: $--color-primary,
+    background-color: #2C343A,
+    background-color-2: #2A3137,
+    background-color-3: rgba(204, 204, 204, 0.52),
+    background-hover-color-3: rgba(204, 204, 204, 0.52),
+    background-color-4: #374148,
+    background-color-5: #2C343A,
+    background-color-6: $--color-primary,
+    background-color-7: #3C474E,
+    background-color-8: #3C474E,
+    background-color-9: #2C343A,
+    // table
+    background-hover-color-table-td: #3C474E,
+    background-hover-color-table-td-current:  #78aee9,
+    text-color-td-current: #FFFFFF,
+    border-color: #3c474e,
+    border-color-2: #2C343A,
+    border-color-3: #22272B,
+    border-color-4: transparent,
+    border-color-5: #3C474E,
+    border-color-6: #efefef,
+    border-color-7: #1264BC,
+    border-hover-color: $--color-primary,
+  )
+);
+
+// 尺寸
+$sizes: (mini, small, medium, default);
+$levels: 20; // 12px - 50px
+$size-start: 10px;
+$size-list: (); // (mini: (level1: 14px))
+
+$index: 0;
+@each $type in $sizes {
+  $size-list-item: ();
+  @for $level from 1 through $levels {
+    $size-list-item: map-merge($size-list-item, ('level' + $level: $size-start + ($level - 1) * 2px + $index * 2));
+  }
+  $index: $index + 1;
+  $size-list: map-merge($size-list, ($type: $size-list-item));
+}

@@ -1,0 +1,62 @@
+// base color
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+
+// tagView
+$tagBg: #EEEEEE;
+$tagActiveBg: #E87B0F;
+
+// sidebar
+// sidebar菜单颜色
+$menuActiveBg: #E87B0F; // https://github.com/ElemeFE/element/issues/12951
+$menuHover:#fcead8;
+//菜单字体颜色
+$menuText:#31455F;
+//选中菜单字体颜色
+$menuActiveText: #E87B0F;
+//选择的父菜单高亮
+$subMenuActiveText: #ffffff; // https://github.com/ElemeFE/element/issues/12951
+//菜单的背景色
+$menuBg:#FFFFFF;
+
+$subMenuBg:#F3F2F2;
+$subMenuHover: #fff;
+//菜单的宽度
+$sideBarWidth: 208px;
+$containerBg:#F3F2F2;
+$menuTextHoverColor: #E87B0F;
+//顶部的背景颜色
+$top-bg:#67493B;
+$topTextColor: #fff;
+$tabTextColor: #fff;
+$tabBg: #4A342A;
+$tabActiveColor:#E87B0F;
+$searchInputBg:#805F4F;
+$queryBg:#FAFAFA;
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  containerBg:$containerBg;
+  menuTextHoverColor:$menuTextHoverColor;
+  top-bg:$top-bg;
+  topTextColor:$topTextColor;
+  tabTextColor:$tabTextColor;
+  tabBg:$tabBg;
+  tabActiveColor:$tabActiveColor;
+  searchInputBg:$searchInputBg;
+  queryBg:$queryBg
+}

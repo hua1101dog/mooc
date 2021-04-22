@@ -1,0 +1,37 @@
+{
+  "id": "1555998",
+  "name": "state",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "3049642",
+      "name": "太阳",
+      "font_class": "sun",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "3658134",
+      "name": "月亮 (1)",
+      "font_class": "moon",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "3716244",
+      "name": "缩小屏幕",
+      "font_class": "exit-fullscreen",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "7197184",
+      "name": "全屏",
+      "font_class": "fullscreen",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    }
+  ]
+}

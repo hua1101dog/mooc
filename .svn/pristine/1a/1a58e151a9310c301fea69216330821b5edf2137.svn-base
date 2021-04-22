@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ezuikit视频</title>
+  <link href="/static/layui/css/layui.css" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    html,
+    body {
+      width: 100%;
+      height: 100%
+    }
+    .box {
+      position: relative;
+      color: #fff;
+      width: 100%;
+      height: 100%
+    }
+    a {
+      color: #fff;
+    }
+    .operator-box {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .layui-progress {
+      margin: 10px 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div id="myPlayer"></div>
+<!--    <div class="operator-box">-->
+<!--      <div class="layui-progress" lay-filter="progress" >-->
+<!--        <div class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+  <script src="../plugins/ezuikit/ezuikit.js"></script>
+<!--  <script src="../layui/layui.js"></script>-->
+  <script>
+    let decoder = null;
+    let url = getParam('url');
+    let width = getParam('width');
+    let height = getParam('height');
+    let accessToken = getParam('accessToken');
+    let autoplay = getParam('autoplay') || 'true';
+    let begin = getParam('begin');
+    let end = getParam('end');
+    let currentDate = '';
+    let isReview = false;
+    let interval = null;
+
+    function getParam(name) {
+      return location.href.match(new RegExp('[?#&]' + name + '=([^?#&]+)', 'i')) ? RegExp.$1 : '';
+    }
+
+    document.getElementById('myPlayer').style.width = `${width}px`;
+    document.getElementById('myPlayer').style.height = `${height}px`;
+
+    function instance(url, begin, end) {
+      let newUrl = url;
+      if (begin && end) {
+        newUrl += `?begin=${begin}&end=${end}`
+      }
+      decoder = new EZUIKit.EZUIPlayer({
+        id: 'myPlayer',
+        autoplay: autoplay === 'true',
+        url: newUrl,
+        accessToken: accessToken,
+        height: height,
+        width: width,
+        decoderPath: '../plugins/ezuikit',
+        handleError() {
+          console.log('失败')
+        },
+        handleSuccess() {
+          console.log('播放成功');
+          // setProgress();
+        },
+      });
+    }
+
+    function setProgress() {
+      let startDate = '';
+      interval = setInterval(() => {
+        getCurrentDate().then(val => {
+          // console.log(val);
+          if (!startDate) startDate = val;
+          const allLength = 24 * 60 * 60 * 1000;
+        }).catch(() => {});
+      }, 1000);
+    }
+
+    instance(url, begin, end);
+
+    function review(begin, end, url) {
+      isReview = true;
+      clearTime();
+      closePlayer();
+      instance(url, begin, end);
+    }
+
+    function replay() {
+      isReview = false;
+      clearTime();
+      closePlayer();
+      instance(url, begin, end);
+    }
+
+    function getCurrentDate() {
+      return new Promise((resolve, reject) => {
+        decoder.getOSDTime(function(iTime){
+          console.log(iTime)
+          if (currentDate !== iTime) {
+            currentDate = iTime;
+            resolve(iTime);
+          } else {
+            reject();
+          }
+        })
+      });
+    }
+
+    function closePlayer() {
+      if (decoder) {
+        clearTime();
+        decoder.stop();
+      }
+    }
+
+    function clearTime() {
+      clearInterval(interval);
+    }
+
+    function play() {
+      decoder.play();
+    }
+
+    // layui.use('element', function(){
+    //   const $ = layui.jquery;
+    //   const element = layui.element;
+    //
+    //   $('.layui-progress').on('mousedown', (e) => {
+    //     let target = e.target;
+    //     if (!$(e.target).hasClass('layui-progress')) {
+    //       target = target.parentElement;
+    //     }
+    //     let occupyWidth = e.pageX - target.offsetLeft;
+    //     let fullWidth = parseFloat(getComputedStyle(target).width);
+    //     let datePrecent = occupyWidth / fullWidth;
+    //     element.progress('progress', `${datePrecent * 100}%`)
+    //   })
+    // });
+
+  </script>
+</body>
+
+</html>

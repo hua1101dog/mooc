@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>723AB203-F61D-4099-B1E5-446F64A2C7E6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="color: rgb(51, 51, 51);" fill-rule="evenodd">
+        <g id="自定义预设-2" transform="translate(-388.000000, -212.000000)">
+            <g id="白天" transform="translate(388.000000, 212.000000)">
+                <g id="椭圆_18">
+                    <circle id="椭圆形" cx="13" cy="13" r="13"></circle>
+                    <circle id="椭圆形" stroke="#FFFFFF" stroke-width="2" cx="13" cy="13" r="12"></circle>
+                </g>
+                <g id="明度" transform="translate(3.510000, 4.833000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path d="M8.761,0.311 C4.50880564,0.359266663 1.08710079,3.82003171 1.08710079,8.0725 C1.08710079,12.3249683 4.50880564,15.7857333 8.761,15.834" id="路径_232"></path>
+                    <path d="M8.761,16.144 L6.898,15.678 C3.41276247,14.806448 0.975534405,11.6644892 0.998,8.072 C0.935276515,4.49884496 3.40562604,1.3790866 6.898,0.621 L8.761,-2.84217094e-14 L8.761,16.144 L8.761,16.144 Z M5.661,4.657 C4.67481567,5.51782966 4.10891664,6.76295942 4.10891664,8.072 C4.10891664,9.38104058 4.67481567,10.6261703 5.661,11.487 L5.661,4.657 L5.661,4.657 Z" id="路径_233"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
